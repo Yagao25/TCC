@@ -1,0 +1,235 @@
+/*TELA INI.PHP INICIO
+/* Estilo geral da fonte */
+body, .navbar, .dropdown-menu {
+    font-family: 'Poppins', sans-serif; /* Define a fonte padrão como 'Poppins' */
+}
+
+/* Estilo para o logo */
+.nav_logo {
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte do logo */
+    font-weight: 600; /* Torna o texto do logo mais espesso */
+    color: white; /* Define a cor do logo como branca */
+    text-decoration: none; /* Remove o sublinhado do texto do logo */
+}
+.nav_logo:hover {
+    color: #f8f9fa; /* Altera a cor para um tom mais claro ao passar o mouse */
+}
+
+/* Remove a seta padrão dos dropdowns */
+.dropdown-toggle::after {
+    display: none !important; /* Oculta a seta adicionada automaticamente */
+}
+
+/* Exibe o menu dropdown ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+    display: block; /* Torna o menu dropdown visível */
+}
+
+/* Centraliza os menus dropdown */
+.navbar-nav .dropdown-menu {
+    left: 50%; /* Move o dropdown para o centro */
+    transform: translateX(-50%); /* Ajusta para centralizar perfeitamente */
+}
+
+/* Estilo do item de dropdown ao passar o mouse */
+.dropdown-item:hover {
+    background-color: #007bff; /* Define o fundo azul ao passar o mouse */
+    color: #fff; /* Define o texto como branco ao passar o mouse */
+}
+
+
+.offcanvas-body {
+    display: flex; /* Define um layout flexível */
+    flex-direction: column; /* Organiza os elementos em uma coluna */
+    justify-content: space-between; /* Espaça os elementos uniformemente entre o início e o fim */
+    height: 100%; /* Ocupa a altura total do offcanvas */
+}
+
+.navbar {
+    background-image: url('Fotos/bg4.jpg'); /* Substitua com o caminho correto da sua imagem */
+    background-size: cover; /* A imagem ocupa toda a área da navbar */
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem fixa enquanto rola a página */
+    position: fixed; /* Fixa a navbar no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* Garante que a navbar fique sobre outros elementos */}
+
+/* Estilo para o botão de menu branco */
+.menu-btn {
+    border: none; /* Remove a borda do botão */
+    color: white; /* Define a cor do botão como branca */
+    font-size: 30px; /* Aumenta o tamanho do texto do botão */
+    cursor: pointer; /* Adiciona o cursor de ponteiro ao passar o mouse */
+}
+/* Estilo para o logo */
+.nav_logo {
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte do logo */
+    font-weight: 600; /* Torna o texto do logo mais espesso */
+    color: white; /* Define a cor do logo como branca */
+    text-decoration: none; /* Remove o sublinhado do texto do logo */
+}
+.nav_logo:hover {
+    color: #f8f9fa; /* Altera a cor para um tom mais claro ao passar o mouse */
+}
+
+
+body {
+    padding-top: 80px; /* Espaço reservado para a futura navbar */
+    font-family: 'Poppins', sans-serif;
+    background-image: url('bg.jpg'); /* URL de uma imagem de exemplo, substitua pela sua imagem desejada */
+    background-size: cover; /* Para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem não se moverá com o scroll */
+
+}
+
+ /* Estilos gerais do offcanvas */
+.offcanvas {
+    background-color: #ffffff; /* Define o fundo do offcanvas como branco */
+    color: #006666; /* Define a cor do texto no offcanvas */
+    border: none; /* Remove qualquer borda */
+    box-shadow: 4px 0 6px rgba(0,0,0,0.3); /* Adiciona uma sombra ao lado do offcanvas */
+    transition: transform 0.3s ease-in-out; /* Adiciona uma transição suave ao abrir/fechar */
+}
+
+/* Cabeçalho do offcanvas */
+.offcanvas-header {
+    background-color: #ffffff; /* Fundo branco no cabeçalho */
+    border-bottom: 1px solid #006666; /* Adiciona uma linha inferior com a cor #006666 */
+    padding: 20px; /* Espaçamento interno */
+}
+
+/* Corpo do offcanvas */
+.offcanvas-body {
+    padding: 20px; /* Espaçamento interno do corpo */
+}
+
+/* Título do offcanvas */
+.offcanvas-title {
+    font-size: 1.8rem; /* Define o tamanho do texto do título */
+    font-weight: 700; /* Torna o texto do título mais espesso */
+    color: #006666; /* Define a cor do texto */
+    text-decoration: none; /* Remove qualquer sublinhado */
+}
+
+/* Estilos para a lista de itens do menu */
+.list-group-item a {
+    color: #006666; /* Cor dos links nos itens da lista */
+    text-decoration: none; /* Remove sublinhados dos links */
+    transition: color 0.3s; /* Adiciona uma transição suave ao mudar a cor */
+}
+
+/* Efeito ao passar o mouse sobre os itens da lista */
+.list-group-item:hover {
+    background-color: #006666; /* Altera o fundo ao passar o mouse */
+}
+
+.list-group-item:hover a {
+    color: white; /* Altera a cor do texto dos links para branco */
+}
+
+/* Estilos dos botões do modal */
+.modal-header {
+    background-color: #006666; /* Fundo da área de cabeçalho do modal */
+    color: white; /* Texto branco no cabeçalho */
+}
+
+.modal-footer {
+    border-top: 1px solid #006666; /* Linha superior com a mesma cor do cabeçalho */
+}
+
+
+
+/* Apenas os itens <li> dentro do <ul> irão mudar de cor no hover */
+.dropdown-menu .dropdown-item:hover {
+        background-color: #006666; /* Fundo verde */
+        color: white; /* Texto branco */
+}
+
+
+/*TELA INI.PHP FIM*/
+
+
+/* Wrapper para o conteúdo principal */
+.content-wrapper {
+    max-width: 900px; /* Define uma largura máxima para o container centralizado */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px; /* Espaçamento interno */
+    background: #ffffff; /* Cor de fundo branca */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Grupo de entrada (input) */
+.input-group {
+    display: flex; /* Alinha os itens em uma linha flexível */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+
+   
+
+        .register {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .register .register-heading {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .register .form-control {
+            font-size: 0.9rem;
+            padding: 10px;
+            height: auto;
+        }
+        .register button {
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+        .register-right {
+            width: 100%;
+        }
+        .register .row {
+            margin: 0;
+        }
+        .register .col-md-6 {
+            padding: 10px;
+        }
+
+        .rounded-image {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .container.register {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.register-heading {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-control {
+    font-size: 12px;
+    padding: 5px;
+    height: auto;
+}
+
+
+
+
+
+

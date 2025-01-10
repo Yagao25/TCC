@@ -1,0 +1,191 @@
+body {
+    background-color: #f8f9fa;
+}
+.content-wrapper {
+    max-width: 900px; /* Ajuste para centralização */
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+ /* Estilo geral da fonte */
+ body, .navbar, .dropdown-menu {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilo para o logo */
+.nav_logo {
+    font-size: 1.5rem; /* Tamanho maior */
+    font-weight: 600; /* Peso mais forte */
+    color: white;
+    text-decoration: none; /* Remove sublinhado */
+}
+.nav_logo:hover {
+    color: #f8f9fa; /* Cor clara ao passar o mouse */
+}
+
+/* Remove a seta dos dropdowns */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* Dropdowns visíveis ao passar o mouse */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Centraliza os dropdowns */
+.navbar-nav .dropdown-menu {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Estilo do item ao passar o mouse */
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Estilo da imagem redonda */
+.rounded-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Fixar a imagem no rodapé do offcanvas */
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+ /* Altera a cor da navbar */
+ .navbar {
+    background-color: transparent !important;
+}
+
+ /* Estilo para o botão de menu branco */
+ .menu-btn {
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('../Fotos/bg4.jpg'); /* URL de uma imagem de exemplo, substitua pela sua imagem desejada */
+    background-size: cover; /* Para cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* A imagem não se moverá com o scroll */
+    color: black; /* Texto branco para contraste */
+}
+
+ /* Estilos do offcanvas */
+.offcanvas {
+    background-color: #ffffff; /* Fundo branco */
+    color: #006666; /* Cor das letras #006666 */
+    border: none;
+    box-shadow: 4px 0 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.offcanvas-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #006666; /* Linha inferior com a mesma cor */
+    padding: 20px;
+}
+
+.offcanvas-body {
+    padding: 20px;
+}
+
+ /* Estilo para o botão */
+ .btn-outline-primary {
+    border: 1px solid #006666 !important; /* Altera a borda para verde */
+    color: #006666 !important; /* Altera a cor do texto */
+  }
+
+  /* Estilo para o botão quando hover */
+  .btn-outline-primary:hover {
+    background-color: #006666 !important; /* Cor de fundo verde quando hover */
+    color: white !important; /* Cor do texto em branco quando hover */
+  }
+
+  /* Estilo para o ícone dentro do botão */
+  .btn-outline-primary i {
+    color: #006666 !important; /* Altera a cor do ícone */
+  }
+
+  /* Estilo para o ícone quando hover */
+  .btn-outline-primary:hover i {
+    color: white !important; /* Altera a cor do ícone para branco quando hover */
+  }
+.offcanvas-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #006666;
+    text-decoration: none;
+}
+
+/* Lista de itens do menu */
+.list-group-item a {
+    color: #006666; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.list-group-item:hover {
+    background-color: #006666; 
+
+}
+
+.list-group-item:hover a {
+    color: white;
+}
+
+/* Botões do modal */
+.modal-header {
+    background-color: #006666;
+    color: white;
+}
+
+.modal-footer {
+    border-top: 1px solid #006666;
+}
+
+/* Botão Sair */
+.btn-danger {
+    background-color: #E74C3C;
+    border: none;
+    padding: 10px 20px;
+}
+.btn-danger:hover {
+    background-color: #C0392B;
+}
+
+.rounded-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.navbar-brand {
+    font-size: 2rem; /* Aumenta o tamanho da fonte */
+}
+/* Efeito ao passar o mouse sobre os itens da lista */
+.list-group-item:hover {
+    background-color: #006666; /* Altera o fundo ao passar o mouse */
+}
+

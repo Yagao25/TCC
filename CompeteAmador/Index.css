@@ -1,0 +1,505 @@
+/*TELA INDEX.PHP INICIO
+
+/* Modal no canto superior direito */
+.modal-dialog {
+    position: fixed; /* Fixa o modal em uma posição específica da tela */
+    top: 10%; /* Coloca o modal a 10% do topo da tela */
+    right: 10%; /* Coloca o modal a 10% da borda direita da tela */
+    transform: none; /* Remove qualquer transformação aplicada ao modal */
+  }
+  
+  /* Altera a cor do texto digitado no campo de senha */
+  input[type="password"] {
+    color: black; /* Define a cor do texto digitado como preta */
+  }
+  
+  /* Estiliza o grupo de entrada com botão */
+  .input-group {
+    display: flex; /* Utiliza flexbox para organizar os elementos */
+    align-items: center; /* Alinha os elementos verticalmente no centro */
+  }
+  
+  /* Faz o campo de entrada ocupar o máximo de espaço */
+  .input-group .form-control {
+    flex: 1; /* O campo de entrada ocupa todo o espaço disponível */
+  }
+  
+  /* Estiliza o botão dentro do grupo de entrada */
+  .input-group .btn {
+    margin-left: -1px; /* Remove o pequeno espaço entre o botão e o campo de entrada */
+    border-top-left-radius: 0; /* Remove o arredondamento superior esquerdo do botão */
+    border-bottom-left-radius: 0; /* Remove o arredondamento inferior esquerdo do botão */
+  }
+  
+  /* Estiliza o fundo da página */
+  body {
+    background-image: url("Fotos/bg4.jpg"); /* Define uma imagem de fundo */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+  }
+  
+  /* Define a largura máxima do container */
+  .container {
+    max-width: 900px; /* Limita a largura do container a 900px */
+  }
+  
+  /* Remove o sublinhado dos links */
+  a {
+    display: inline-block; /* Faz os links se comportarem como blocos */
+    text-decoration: none; /* Remove o sublinhado dos links */
+  }
+  
+  /* Remove o contorno de inputs */
+  input {
+    outline: none !important; /* Remove qualquer contorno dos campos de entrada */
+  }
+  
+  /* Estiliza o título */
+  h1 {
+    text-align: center; /* Centraliza o texto */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    margin-bottom: 40px; /* Adiciona uma margem inferior de 40px */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+  }
+  
+  /* Estiliza a seção que envolve o formulário */
+  section#formHolder {
+    padding: 50px 0; /* Adiciona um padding de 50px nas partes superior e inferior */
+  }
+  
+  /* Estiliza a área da marca */
+  .brand {
+    padding: 20px; /* Adiciona um padding de 20px */
+    background: url(https://goo.gl/A0ynht); /* Define uma imagem de fundo para a marca */
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a área */
+    background-position: center center; /* Centraliza a imagem de fundo */
+    color: #fff; /* Define a cor do texto como branco */
+    min-height: 540px; /* Define a altura mínima da área como 540px */
+    position: relative; /* Define o posicionamento como relativo para elementos filhos */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave ao redor da área */
+    transition: all 0.6s cubic-bezier(1, -0.375, 0.285, 0.995); /* Aplica uma transição suave */
+    z-index: 9999; /* Coloca a área acima de outros elementos na pilha */
+  }
+  
+  /* Estiliza a classe "active" da marca */
+  .brand.active {
+    width: 100%; /* Quando a marca estiver ativa, ocupa 100% da largura */
+  }
+  
+  /* Estiliza a camada de sobreposição da marca */
+  .brand::before {
+    content: ""; /* Cria um pseudo-elemento */
+    display: block; /* Exibe o pseudo-elemento como bloco */
+    width: 100%; /* A largura é 100% da área da marca */
+    height: 100%; /* A altura é 100% da área da marca */
+    position: absolute; /* Posiciona o pseudo-elemento de forma absoluta dentro da área da marca */
+    top: 0; /* Alinha o pseudo-elemento no topo da área */
+    left: 0; /* Alinha o pseudo-elemento à esquerda da área */
+    background: rgba(0, 0, 0, 0.85); /* Aplica um fundo escuro com opacidade */
+    z-index: -1; /* Coloca o pseudo-elemento abaixo do conteúdo da marca */
+  }
+  
+/* Estiliza o título dentro da área da marca */
+.brand .heading {
+    position: absolute; /* Posiciona o título de forma absoluta dentro da área */
+    top: 50%; /* Coloca o título no centro vertical da área */
+    left: 50%; /* Coloca o título no centro horizontal da área */
+    transform: translate(-50%, -50%); /* Ajusta o título para ficar perfeitamente centralizado */
+    text-align: center; /* Alinha o texto no centro */
+    transition: all 0.6s; /* Adiciona uma transição suave para qualquer alteração */
+  }
+  
+  /* Quando a classe "active" é adicionada ao título, ele muda de posição */
+  .brand .heading.active {
+    top: 100px; /* Muda a posição do título para 100px do topo */
+    left: 100px; /* Muda a posição do título para 100px da esquerda */
+    transform: translate(0); /* Remove o efeito de transformação */
+  }
+  
+  /* Estiliza o subtítulo (h2) dentro da área da marca */
+  .brand .heading h2 {
+    font-size: 70px; /* Define o tamanho da fonte como 70px */
+    font-weight: 700; /* Define o peso da fonte como negrito */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    margin-bottom: 0; /* Remove a margem inferior */
+  }
+  
+  /* Estiliza o parágrafo dentro da área da marca */
+  .brand .heading p {
+    font-size: 15px; /* Define o tamanho da fonte como 15px */
+    font-weight: 300; /* Define o peso da fonte como mais leve */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    letter-spacing: 2px; /* Adiciona espaçamento entre as letras */
+    white-space: 4px; /* Limita a quebra de linha para 4px (pode precisar de ajuste) */
+    font-family: "Raleway", sans-serif; /* Define a fonte como "Raleway" */
+  }
+  
+  /* Estiliza a mensagem de sucesso */
+  .brand .success-msg {
+    width: 100%; /* Define a largura da mensagem de sucesso como 100% */
+    text-align: center; /* Alinha o texto no centro */
+    position: absolute; /* Posiciona a mensagem de sucesso de forma absoluta */
+    top: 50%; /* Coloca a mensagem de sucesso no centro vertical */
+    left: 50%; /* Coloca a mensagem de sucesso no centro horizontal */
+    transform: translate(-50%, -50%); /* Ajusta a mensagem para centralizar perfeitamente */
+    margin-top: 60px; /* Adiciona uma margem superior de 60px */
+  }
+  
+  /* Estiliza o parágrafo dentro da mensagem de sucesso */
+  .brand .success-msg p {
+    font-size: 25px; /* Define o tamanho da fonte como 25px */
+    font-weight: 400; /* Define o peso da fonte como normal */
+    font-family: "Raleway", sans-serif; /* Define a fonte como "Raleway" */
+  }
+  
+  /* Estiliza o link dentro da mensagem de sucesso */
+  .brand .success-msg a {
+    font-size: 12px; /* Define o tamanho da fonte como 12px */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    padding: 8px 30px; /* Adiciona padding ao redor do link */
+    background: #f95959; /* Define a cor de fundo do link */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: #fff; /* Define a cor do texto como branco */
+    border-radius: 30px; /* Aplica um arredondamento de 30px aos cantos do link */
+  }
+  
+  /* Estiliza a animação de transição na mensagem de sucesso */
+  .brand .success-msg p, .brand .success-msg a {
+    transition: all 0.9s; /* Adiciona uma transição suave para as mudanças */
+    transform: translateY(20px); /* Move a mensagem de sucesso para baixo durante a transição */
+    opacity: 0; /* Define a opacidade como 0 (invisível) inicialmente */
+  }
+  
+  /* Quando a classe "active" é adicionada à mensagem de sucesso, ela aparece */
+  .brand .success-msg p.active, .brand .success-msg a.active {
+    transform: translateY(0); /* Remove o movimento para baixo */
+    opacity: 1; /* Torna a mensagem de sucesso visível */
+  }
+  
+  /* Estiliza o formulário, tornando-o um contêiner relativo */
+  .form {
+    position: relative; /* Define o formulário como um contêiner com posição relativa */
+  }
+  
+/* Estiliza o container da peça do formulário */
+.form .form-peice {
+    background: #fff; /* Define o fundo como branco */
+    min-height: 480px; /* Define a altura mínima como 480px */
+    margin-top: 30px; /* Adiciona uma margem superior de 30px */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Aplica uma sombra suave ao redor da peça */
+    color: #bbbbbb; /* Define a cor do texto como um cinza claro */
+    padding: 30px 0 60px; /* Adiciona padding nas partes superior, inferior e lateral */
+    transition: all 0.9s cubic-bezier(1, -0.375, 0.285, 0.995); /* Adiciona uma transição suave para alterações */
+    position: absolute; /* Posiciona a peça de forma absoluta dentro de um container */
+    top: 0; /* Alinha a peça no topo do container */
+    left: -30%; /* Posiciona a peça à esquerda fora da tela */
+    width: 130%; /* Define a largura da peça como 130% do container */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites da peça */
+  }
+  
+  /* Quando a classe "switched" é adicionada à peça do formulário, ela é movida para a posição correta */
+  .form .form-peice.switched {
+    transform: translateX(-100%); /* Move a peça para a esquerda, ocultando-a */
+    width: 100%; /* Define a largura da peça para 100% */
+    left: 0; /* Coloca a peça na posição inicial da tela */
+  }
+  
+  /* Estiliza o formulário dentro da peça */
+  .form form {
+    padding: 0 40px; /* Adiciona padding lateral de 40px */
+    margin: 0; /* Remove a margem */
+    width: 70%; /* Define a largura do formulário para 70% */
+    position: absolute; /* Posiciona o formulário de forma absoluta dentro da peça */
+    top: 50%; /* Coloca o formulário no centro vertical */
+    left: 60%; /* Coloca o formulário a 60% da largura da peça */
+    transform: translate(-50%, -50%); /* Centraliza o formulário na tela */
+  }
+  
+  /* Estiliza os grupos de campos dentro do formulário */
+  .form form .form-group {
+    margin-bottom: 5px; /* Adiciona uma margem inferior de 5px */
+    position: relative; /* Posiciona o grupo de campos de forma relativa */
+  }
+  
+  /* Estiliza os grupos de campos com erro, alterando a cor das bordas e do label */
+  .form form .form-group.hasError input {
+    border-color: #39413f !important; /* Altera a cor da borda do input para um tom escuro */
+  }
+  
+  .form form .form-group.hasError label {
+    color: #f95959 !important; /* Altera a cor do texto do label para vermelho */
+  }
+  
+  /* Estiliza o label dos campos de formulário */
+  .form form label {
+    font-size: 12px; /* Define o tamanho da fonte como 12px */
+    font-weight: 400; /* Define o peso da fonte como normal */
+    text-transform: uppercase; /* Transforma o texto para maiúsculas */
+    font-family: "Montserrat", sans-serif; /* Define a fonte como "Montserrat" */
+    cursor: text; /* Altera o cursor para indicar que o campo é editável */
+    z-index: -1; /* Coloca o label abaixo de outros elementos */
+  }
+  
+  /* Remove a animação do label quando o campo tem erro ou está ativo */
+  .form form label.active,
+  .form form .form-group.hasError label {
+    transform: none; /* Remove qualquer transformação aplicada ao label */
+    font-size: 12px; /* Mantém o tamanho da fonte constante */
+  }
+  
+  /* Estiliza o label com uma fonte diferente quando a classe "fontSwitch" é aplicada */
+  .form form label.fontSwitch {
+    font-family: "Raleway", sans-serif !important; /* Define a fonte como "Raleway" */
+    font-weight: 600; /* Define o peso da fonte como mais grosso */
+  }
+  
+  /* Estiliza os inputs do formulário, exceto o botão de submit */
+  .form form input:not([type=submit]) {
+    background: none; /* Remove o fundo */
+    outline: none; /* Remove o contorno */
+    border: none; /* Remove as bordas */
+    display: block; /* Exibe o input como bloco */
+    padding: 10px 0; /* Adiciona padding no topo e fundo */
+    width: 100%; /* Faz o input ocupar toda a largura disponível */
+    border-bottom: 1px solid #eee; /* Adiciona uma borda inferior fina */
+    color: #444; /* Define a cor do texto como cinza escuro */
+    font-size: 15px; /* Define o tamanho da fonte como 15px */
+    font-family: "Montserrat", sans-serif; /* Define a fonte como "Montserrat" */
+    z-index: 1; /* Coloca o input acima de outros elementos */
+  }
+  
+  /* Altera a cor da borda do input quando há erro */
+  .form form input:not([type=submit]).hasError {
+    border-color: #f95959; /* Altera a cor da borda para vermelho */
+  }
+  
+  /* Estiliza o span de erro dentro do formulário */
+  .form form span.error {
+    color: #f95959; /* Define a cor do texto de erro como vermelho */
+    font-family: "Montserrat", sans-serif; /* Define a fonte como "Montserrat" */
+    font-size: 12px; /* Define o tamanho da fonte como 12px */
+    position: absolute; /* Posiciona o erro de forma absoluta */
+    bottom: -20px; /* Coloca o erro 20px abaixo do campo */
+    right: 0; /* Alinha o erro à direita do campo */
+    display: none; /* Inicialmente, o erro está oculto */
+  }
+  
+  
+  
+  /* Estiliza o botão CTA (Call to Action) dentro do formulário */
+  .form form .CTA {
+    margin-top: 30px; /* Adiciona uma margem superior de 30px */
+  }
+  
+/* Estiliza o input dentro do CTA */
+.form form .CTA input {
+    font-size: 12px; /* Define o tamanho da fonte */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    padding: 5px 30px; /* Adiciona espaçamento interno */
+    border-radius: 30px; /* Torna os cantos arredondados */
+    margin-right: 20px; /* Adiciona espaçamento à direita */
+    border: none; /* Remove a borda */
+    font-family: "Montserrat", sans-serif; /* Define a fonte */
+    background-color: #006666; /* Cor de fundo */
+    border-color: #4A4A4A; /* Cor da borda */
+    color: #ffffff; /* Cor do texto */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  }
+  
+  /* Estiliza o link de troca (switch) dentro do CTA */
+  .form form .CTA a.switch {
+    font-size: 13px; /* Define o tamanho da fonte */
+    font-weight: 400; /* Peso normal */
+    font-family: "Montserrat", sans-serif; /* Fonte definida */
+    color: #bbbbbb; /* Cor cinza para o texto */
+    text-decoration: underline; /* Sublinha o texto */
+    transition: all 0.3s; /* Transição suave para mudanças */
+  }
+  
+  /* Altera a cor do link ao passar o mouse */
+  .form form .CTA a.switch:hover {
+    color: #000000; /* Cor preta ao passar o mouse */
+  }
+  
+  /* Estilos do rodapé */
+  footer {
+    text-align: center; /* Centraliza o conteúdo do rodapé */
+  }
+  
+  footer p {
+    color: #777; /* Cor cinza para o texto do rodapé */
+  }
+  
+  footer p a, footer p a:focus {
+    color: #b8b09f; /* Cor para links no rodapé */
+    transition: all 0.3s; /* Transição suave para links */
+    text-decoration: none !important; /* Remove a sublinha dos links */
+  }
+  
+  footer p a:hover, footer p a:focus:hover {
+    color: #000000; /* Cor preta ao passar o mouse no link */
+  }
+  
+  /* Responsividade para telas com largura máxima de 768px */
+  @media (max-width: 768px) {
+    .container {
+      overflow: hidden; /* Impede o overflow da container */
+    }
+  
+    section#formHolder {
+      padding: 0; /* Remove padding do formHolder */
+    }
+  
+    section#formHolder div.brand {
+      min-height: 200px !important; /* Ajusta altura mínima */
+    }
+  
+    section#formHolder div.brand.active {
+      min-height: 100vh !important; /* Altera a altura para ocupar a tela toda */
+    }
+  
+    section#formHolder div.brand .heading.active {
+      top: 200px; /* Ajusta a posição do título */
+      left: 50%;
+      transform: translate(-50%, -50%); /* Centraliza o título */
+    }
+  
+    section#formHolder div.brand .success-msg p {
+      font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+  
+    section#formHolder div.brand .success-msg a {
+      padding: 5px 30px; /* Ajusta o padding do link */
+      font-size: 10px; /* Ajusta o tamanho da fonte */
+    }
+  
+    section#formHolder .form {
+      width: 80vw; /* Ajusta a largura da forma */
+      min-height: 500px; /* Define altura mínima */
+      margin-left: 10vw; /* Adiciona margem à esquerda */
+    }
+  
+    section#formHolder .form .form-peice {
+      margin: 0; /* Remove a margem */
+      top: 0; /* Posiciona no topo */
+      left: 0; /* Posiciona à esquerda */
+      width: 100% !important; /* Define a largura como 100% */
+      transition: all 0.5s ease-in-out; /* Transição suave */
+    }
+  
+    section#formHolder .form .form-peice.switched {
+      transform: translateY(-100%); /* Move a peça para cima quando ativada */
+      width: 100%; /* Define largura para 100% */
+      left: 0; /* Posiciona à esquerda */
+    }
+  
+    section#formHolder .form .form-peice > form {
+      width: 100% !important; /* Define a largura para 100% */
+      padding: 60px; /* Ajusta o padding */
+      left: 50%; /* Centraliza a forma */
+    }
+  }
+  
+  /* Responsividade para telas com largura máxima de 480px */
+  @media (max-width: 480px) {
+    section#formHolder .form {
+      width: 100vw; /* Define largura para a tela inteira */
+      margin-left: 0; /* Remove a margem à esquerda */
+    }
+  
+    h2 {
+      font-size: 50px !important; /* Ajusta o tamanho da fonte para h2 */
+    }
+  }
+  
+  /* Estiliza o label dentro do formulário */
+  .form form label {
+    font-size: 13px; /* Define o tamanho da fonte */
+    font-weight: 600; /* Define peso mais grosso */
+    text-transform: uppercase; /* Transforma em maiúsculas */
+    color: #a79f9f; /* Cor mais escura para melhor visibilidade */
+    font-family: "Montserrat", sans-serif; /* Fonte definida */
+  }
+  
+  /* Estiliza o fundo da marca */
+  .brand {
+    padding: 20px; /* Adiciona padding ao redor */
+    background: linear-gradient(135deg, #006666, #00cccc, #66ffff); /* Cria um gradiente de ciano */
+    background-size: cover; /* Faz o fundo cobrir a tela inteira */
+    color: #fff; /* Texto branco */
+    min-height: 540px; /* Altura mínima */
+    position: relative; /* Posiciona a marca de forma relativa */
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Aplica uma sombra suave */
+    transition: all 0.6s cubic-bezier(1, -0.375, 0.285, 0.995); /* Transição suave */
+    z-index: 9999; /* Define o índice z mais alto */
+  }
+  
+  /* Adiciona uma sobreposição escura para melhorar o contraste do texto */
+  .brand::before {
+    content: ""; /* Cria um pseudo-elemento */
+    display: block; /* Torna o pseudo-elemento um bloco */
+    width: 100%; /* Largura 100% */
+    height: 100%; /* Altura 100% */
+    position: absolute; /* Posiciona absolutamente */
+    top: 0; /* Alinha ao topo */
+    left: 0; /* Alinha à esquerda */
+    background: rgba(0, 0, 0, 0.7); /* Aplica um fundo escuro com opacidade */
+    z-index: -1; /* Coloca atrás do conteúdo */
+  }
+  
+  /* Estiliza o título da marca */
+  .brand .heading h2 {
+    font-family: 'Raleway', sans-serif; /* Fonte definida */
+    font-size: 70px; /* Tamanho da fonte */
+    font-weight: 700; /* Peso da fonte */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    margin-bottom: 0; /* Remove a margem inferior */
+    color: #ffffff; /* Texto branco */
+  }
+  
+  /* Estiliza o botão de login com um efeito de hover */
+  .btn-primary:hover {
+    background-color: #757575; /* Cor mais clara ao passar o mouse */
+    border-color: #757575; /* Cor da borda ao passar o mouse */
+  }
+  
+  /* Estiliza o botão de envio de formulário */
+  .form-group input[type="submit"] {
+    font-size: 12px; /* Tamanho da fonte */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    padding: 5px 30px; /* Padding */
+    border-radius: 30px; /* Bordas arredondadas */
+    margin: 25px 20px 0 0; /* Margens ao redor */
+    border: none; /* Remove borda */
+    font-family: "Montserrat", sans-serif; /* Fonte definida */
+    background-color: #006666; /* Cor de fundo */
+    border-color: #4A4A4A; /* Cor da borda */
+    color: #ffffff; /* Cor do texto */
+    transition: background-color 0.3s ease; /* Transição suave */
+  }
+  
+  /* Impede a quebra de linha no campo de data */
+  #dataInput, label[for="dataInput"] {
+    white-space: nowrap; /* Impede quebra de linha */
+  }
+  
+  /* Ajusta o botão dentro do campo de senha */
+  .input-group .btn {
+    border-left: none; /* Remove a borda esquerda */
+    background: none; /* Torna o fundo transparente */
+    display: flex; /* Torna o botão flexível */
+    align-items: center; /* Alinha verticalmente o conteúdo */
+    padding: 0 10px; /* Adiciona espaçamento interno */
+  }
+  
+  .input-group .form-control {
+    border-right: none; /* Remove a borda direita do campo */
+  }
+  
+  .input-group .btn:focus {
+    box-shadow: none; /* Remove o contorno ao clicar */
+  }
+  
+  /*TELA INDEX.PHP FIM
+
+  

@@ -1,0 +1,209 @@
+
+    
+  body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.2s;
+  width: 300px; /* Largura fixa para cada card */
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card-header {
+  background-color: #007BFF;
+  color: white;
+  padding: 15px 10px;
+  font-size: 1.2em;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-body {
+  padding: 15px;
+  text-align: left;
+}
+.card-body img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+  height: 200px; /* Altura da imagem ajustável conforme necessário */
+}
+.card-body h2 {
+  margin-top: 10px;
+  font-size: 1.5em;
+}
+.card-body p {
+  margin: 8px 0;
+  text-align: justify;
+}
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  background-color: #f4f4f4;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.card-footer a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.card-footer a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* Estilos para as células de chave */
+.class-1 {
+    background-color: gray;
+    color: white;
+    border-radius: 2px;
+    width: 30%; /* Largura fixa para as células de chave */
+}
+
+
+/* Estilos para as células de valor */
+.S22 {
+    background-color: white;
+    color: black;
+    border-radius: 2px;
+    width: 70%; /* Largura fixa para as células de valor */
+}
+
+/* Estilos para o botão de alternância */
+.toggle-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para o offcanvas */
+.offcanvas {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inicialmente oculto */
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    transition: right 0.3s ease;
+    z-index: 1050; /* Z-index elevado para sobrepor outros elementos */
+    
+    overflow-y: auto; /* Adiciona rolagem vertical */
+    padding: 20px; /* Adiciona algum espaço interno ao off canvas */
+}
+
+
+
+
+
+/* Estilos para o offcanvas quando ativo */
+.offcanvas.active {
+    right: 0;
+}
+
+/* Estilos para o botão de fechar */
+.close-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos para a lista no offcanvas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Estilos para os itens da lista */
+li {
+    padding: 10px;
+}
+
+/* Estilos para links */
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Estilos para o conteúdo do menu */
+#menuContent {
+    overflow-y: auto;
+    max-height: calc(100% - 60px); /* Altura máxima - altura do botão Fechar Menu */
+    padding-top: 20px; /* Adiciona espaço vazio no topo do conteúdo */
+}
+
+/* Estilos para o corpo do offcanvas */
+.offcanvas-body {
+    overflow-y: auto;
+    max-height: calc(100vh - 60px); /* Altura máxima - altura do cabeçalho */
+    padding-top: 20px;
+}
+.alert-info {
+            color: #0c5460;
+            background-color: #d1ecf1;
+            border-color: #bee5eb;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+ /* Estilo para remover a seta dos dropdowns */
+ .dropdown-toggle::after {
+            display: none !important;
+        }
+
+        /* Estilo personalizado para dropdowns */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Ajuste para posicionar dropdowns centralizados */
+        .navbar-nav .dropdown-menu {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Estilo para itens do dropdown ao passar o mouse */
+        .dropdown-item:hover {
+            background-color: #007bff; /* Azul padrão do Bootstrap */
+            color: #fff; /* Texto branco */
+        }
+
+        /* Estilo para a imagem redonda */
+        .rounded-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Mantém proporções da imagem */
+        }
+
+        /* Ajuste para fixar a imagem no rodapé do offcanvas */
+        .offcanvas-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
